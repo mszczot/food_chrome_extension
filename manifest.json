@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Ala's website",
+  "version": "0.1",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-2.2.4.js", "popup.js"],
+      "css": ["popup.css"]
+    }
+  ],
+
+  "background": {
+     "persistent": false,
+     "scripts": ["jquery-2.2.4.js", "background.js"]
+   },
+
+  "browser_action": {
+    "default_icon": "./res/icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "storage"
+  ],
+
+  "icons": {
+    "16": "./res/icon.png"
+  }
+}
